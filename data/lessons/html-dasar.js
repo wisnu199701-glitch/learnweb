@@ -6,14 +6,14 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
     {
       "id": "html-dasar-1",
       "judul": "Struktur Dasar HTML",
-      "penjelasan": "Setiap halaman HTML punya kerangka wajib: <code>&lt;!DOCTYPE html&gt;</code> menandai jenis dokumen, <code>&lt;html&gt;</code> membungkus semuanya, <code>&lt;head&gt;</code> berisi info halaman (judul, dsb) yang tidak tampil di layar, dan <code>&lt;body&gt;</code> berisi konten yang benar-benar dilihat pengguna. <strong>Mulai lesson ini, kamu akan membangun SATU project nyata: Website Portofolio Pribadi.</strong> Kodenya otomatis tersimpan dan menyambung terus sampai lesson paling akhir — apa pun yang kamu tulis di sini tidak akan hilang saat pindah lesson. <strong>Catatan:</strong> di jalur ini, HTML dan CSS sengaja diselang-seling — begitu ada elemen baru, kamu langsung coba pernak-perniknya (font, warna, ukuran) supaya hasilnya terasa hidup, bukan cuma teks hitam-putih.",
+      "penjelasan": "Setiap halaman HTML punya kerangka wajib: <code>&lt;!DOCTYPE html&gt;</code> menandai jenis dokumen, <code>&lt;html&gt;</code> membungkus semuanya, <code>&lt;head&gt;</code> berisi info halaman (judul, dsb) yang tidak tampil di layar, dan <code>&lt;body&gt;</code> berisi konten yang benar-benar dilihat pengguna. <strong>Mulai lesson ini, kamu akan membangun SATU project nyata: Website Pertamamu.</strong> Kodenya otomatis tersimpan dan menyambung terus sampai lesson paling akhir — apa pun yang kamu tulis di sini tidak akan hilang saat pindah lesson. <strong>Catatan:</strong> di jalur ini, HTML dan CSS sengaja diselang-seling — begitu ada elemen baru, kamu langsung coba pernak-perniknya (font, warna, ukuran) supaya hasilnya terasa hidup, bukan cuma teks hitam-putih.",
       "contoh_kode": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Halaman Pertamaku</title>\n</head>\n<body>\n  <h1>Halo, Dunia!</h1>\n  <p>Ini paragraf pertamaku.</p>\n</body>\n</html>",
       "starter_code": {
         "html": "",
         "css": "",
         "js": ""
       },
-      "tantangan": "Editor HTML di bawah masih kosong — ini titik awal project portofoliomu. Tulis struktur lengkap dari <!DOCTYPE html> sampai </html>, isi <title> dengan \"Portofolio - Namamu\", lalu di <body> buat <h1> berisi namamu dan satu <p> berisi tagline singkat (misal \"Calon Web Developer\"). Klik Jalankan, lalu lanjut ke lesson berikutnya — semua ini akan otomatis terbawa."
+      "tantangan": "Editor HTML di bawah masih kosong — ini titik awal Website Pertamamu. Tulis struktur lengkap dari <!DOCTYPE html> sampai </html>, isi <title> dengan \"Website Pertama - Namamu\", lalu di <body> buat satu <h1> berisi \"HALLO NAMA SAYA [NAMAMU]\" (ganti [NAMAMU] dengan namamu sendiri). Klik Jalankan, lalu lanjut ke lesson berikutnya — semua ini akan otomatis terbawa."
     },
     {
       "id": "html-dasar-2",
@@ -25,7 +25,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Di portofoliomu, tambahkan <h2>Tentang Saya</h2> diikuti 1-2 <p> berisi cerita singkat tentang dirimu."
+      "tantangan": "Tepat di bawah <h1> namamu, tambahkan <h2>INI ADALAH WEBSITE PERTAMA SAYA</h2> sebagai sub judul."
     },
     {
       "id": "html-dasar-3",
@@ -37,7 +37,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Di kotak CSS, buat aturan untuk h1 (nama) di portofoliomu, beri text-align: center; supaya namamu rata tengah. Coba juga ganti ke right untuk lihat bedanya, lalu putuskan mana yang paling kamu suka untuk tetap dipakai."
+      "tantangan": "Di kotak CSS, buat satu aturan yang menargetkan h1 DAN h2 sekaligus (pisahkan dengan koma: h1, h2 { ... }), beri text-align: center; supaya nama dan sub judul di Website Pertamamu sama-sama rata tengah. Coba juga ganti ke right untuk lihat bedanya, lalu putuskan mana yang paling kamu suka untuk tetap dipakai."
     },
     {
       "id": "html-dasar-4",
@@ -49,7 +49,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "h1 {\n  text-align: center;\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan properti font-family di DALAM aturan h1 yang sama (baris baru, kurung kurawal yang sama) — coba font-family: Georgia, serif; atau \"Courier New\", monospace;"
+      "tantangan": "Tambahkan satu <p> baru tepat di bawah h2, isi teksnya \"INI FONT ALGERIAN\". Buat aturan CSS baru untuk p ini, beri font-family: \"Algerian\", fantasy; — kalau font Algerian tidak terpasang di perangkatmu, browser otomatis memakai font fantasy sebagai cadangan. Coba juga ganti ke font unik lain yang ada di komputermu, misalnya \"Impact\", fantasy; atau \"Comic Sans MS\", cursive;"
     },
     {
       "id": "html-dasar-5",
@@ -61,7 +61,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "h1 {\n  text-align: center;\n  font-family: Georgia, serif;\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan properti color pada aturan h1 yang sama (di baris baru, masih di dalam kurung kurawal yang sama), pilih warna favoritmu (nama warna atau kode hex)."
+      "tantangan": "Tambahkan properti color pada aturan h1 (nama) di Website Pertamamu (di baris baru, masih di dalam kurung kurawal yang sama), pilih warna favoritmu (nama warna atau kode hex)."
     },
     {
       "id": "html-dasar-6",
@@ -73,7 +73,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "h1 {\n  text-align: center;\n  font-family: Georgia, serif;\n  color: #4f46e5;\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan font-size pada aturan h1 (coba 36px-48px), lalu buat aturan baru untuk tag p dengan font-size lebih kecil (misal 16px) supaya perbedaan judul vs teks biasa makin terlihat."
+      "tantangan": "Tambahkan font-size pada aturan h1 (coba 36px-48px), lalu buat aturan baru untuk h2 dengan font-size lebih kecil (misal 20px), supaya nama dan sub judul di Website Pertamamu punya hierarki ukuran yang jelas."
     },
     {
       "id": "html-dasar-7",
@@ -85,7 +85,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "h1 {\n  text-align: center;\n  font-family: Georgia, serif;\n  font-size: 40px;\n  color: #4f46e5;\n}",
         "js": ""
       },
-      "tantangan": "Beri background-color pada nama dan tagline portofoliomu (h1 dan p tagline), pastikan warna tekstnya tetap kontras/mudah dibaca di atas background baru. Boleh tambahkan padding sedikit supaya tidak terlalu mepet."
+      "tantangan": "Beri background-color pada h1 (nama) di Website Pertamamu, pastikan warna tekstnya tetap kontras/mudah dibaca di atas background baru. Boleh tambahkan padding sedikit supaya tidak terlalu mepet."
     },
     {
       "id": "html-dasar-8",
@@ -121,7 +121,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Tambahkan <h2>Riwayat Pendidikan</h2> diikuti <table> berisi minimal 2 baris (nama sekolah/kampus dan tahun)."
+      "tantangan": "Di bagian bawah Website Pertamamu, tambahkan sebuah <table border=\"1\"> berisi daftar nilai teman sekelas dengan kolom NO, NAMA, KELAS, NILAI, lalu isi 3 baris data, contoh: 1 - ALIF - 1A - 75, 2 - NURMAN - 1B - 85, 3 - ABDUL - 1C - 95 (boleh ganti dengan data temanmu sendiri)."
     },
     {
       "id": "html-dasar-11",
@@ -133,7 +133,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Tambahkan <img> untuk foto profil (boleh pakai https://via.placeholder.com/150, atau ganti angka 150 dengan ukuran lain untuk lihat efeknya) di dekat nama, isi alt dengan deskripsi singkat. Lalu tambahkan satu <a> menuju akun GitHub/media sosialmu yang dibuka di tab baru dengan target=\"_blank\"."
+      "tantangan": "Tambahkan dua hal ke Website Pertamamu: (1) satu <img> (boleh pakai https://via.placeholder.com/280x160, atau ganti dengan fotomu sendiri) yang nanti akan kita taruh di dalam \"box\" di lesson berikutnya — isi alt dengan deskripsi singkat; (2) satu <a href=\"https://www.google.com\">TEKAN UNTUK PERGI KE GOOGLE</a> yang dibuka di tab baru dengan target=\"_blank\"."
     },
     {
       "id": "html-dasar-12",
@@ -145,7 +145,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Tambahkan <h2>Keahlian</h2> diikuti <ul> berisi minimal 4 skill (teknis atau non-teknis) yang kamu punya atau sedang dipelajari."
+      "tantangan": "Tambahkan <p>Kita buat list :</p> diikuti <ul> berisi minimal 3 item — boleh pakai contoh AN-NASS, AL-FALAQ, AL-IKHLAS seperti di rencana Website Pertamamu, atau ganti dengan daftar favoritmu sendiri (hobi, makanan, mapel, dsb)."
     },
     {
       "id": "html-dasar-13",
@@ -157,7 +157,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Tambahkan <h2>Hubungi Saya</h2> diikuti form sederhana dengan input nama dan email plus tombol kirim, sebagai bagian kontak di portofoliomu."
+      "tantangan": "Form ini belum ada di rencana Website Pertamamu, tapi coba tambahkan sebagai bonus (opsional): buat form kesan-pesan sederhana (input nama + tombol kirim) di bagian paling bawah halaman."
     },
     {
       "id": "html-dasar-14",
@@ -169,7 +169,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": ".kotak {\n  border: 1px solid #999;\n  padding: 10px;\n}\n\n.sorot {\n  background: yellow;\n}",
         "js": ""
       },
-      "tantangan": "Bungkus tiap bagian portofoliomu (Tentang Saya, Keahlian, Riwayat Pendidikan, Hubungi Saya) dengan <div class=\"section\">, lalu beri <span class=\"sorot\"> pada satu skill favoritmu di daftar Keahlian."
+      "tantangan": "Sekarang ubah list dan gambarmu jadi \"box\" sungguhan: bungkus paragraf \"Kita buat list :\" beserta <ul>-nya dengan <div class=\"box box-1\">, lalu tambahkan <h3>TEKS BOX 1</h3> di baris paling atas di dalam div itu. Lakukan hal serupa untuk gambar: bungkus <img>-nya dengan <div class=\"box box-2\">, tambahkan <h3>TEKS BOX 2</h3> dan <p>Gambar di dalam box</p> sebelum tag <img>-nya. Belum akan terlihat seperti kotak sungguhan — tampilan border/background-nya baru ditambahkan nanti di modul CSS Dasar."
     },
     {
       "id": "html-dasar-15",
@@ -181,7 +181,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Di bagian Tentang Saya portofoliomu: buat satu kata jadi <strong>, satu frasa jadi <em>, dan tambahkan <blockquote> berisi motto atau prinsip hidupmu."
+      "tantangan": "Ubah <h3>TEKS BOX 1</h3> dan <h3>TEKS BOX 2</h3> di Website Pertamamu jadi <p><strong>TEKS BOX 1</strong></p> dan <p><strong>TEKS BOX 2</strong></p> supaya label kotaknya tebal seperti di rencana awal, bukan heading besar."
     },
     {
       "id": "html-dasar-16",
@@ -193,7 +193,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "header, footer {\n  background: #eee;\n  padding: 10px;\n}\n\nnav a {\n  margin-right: 8px;\n}",
         "js": ""
       },
-      "tantangan": "Rapikan struktur portofoliomu: bungkus nama/tagline dengan <header>, seluruh section (Tentang Saya, Keahlian, Riwayat Pendidikan, Hubungi Saya) dengan <main>, dan tambahkan <footer> berisi teks copyright di akhir halaman."
+      "tantangan": "Sebagai latihan tambahan (opsional): bungkus <h1> dan <h2> di Website Pertamamu dengan <header>, seluruh konten lainnya (box, paragraf, tombol, tabel) dengan <main>, dan tambahkan <footer> berisi teks copyright kecil di akhir halaman."
     },
     {
       "id": "html-dasar-17",
@@ -205,7 +205,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": "document.querySelector(\"#beli-btn\").addEventListener(\"click\", function () {\n  const btn = document.querySelector(\"#beli-btn\");\n  console.log(\"Produk ID:\", btn.dataset.produkId, \"Harga:\", btn.dataset.harga);\n});"
       },
-      "tantangan": "Tambahkan atribut data-level (isi \"pemula\", \"menengah\", atau \"mahir\") pada tiap <li> di daftar Keahlian portofoliomu — ini akan dipakai lagi nanti di lesson JavaScript."
+      "tantangan": "Sebagai latihan tambahan (opsional): tambahkan atribut data-kelas pada tiap <tr> di tabel nilai Website Pertamamu (isi sesuai kolom KELAS-nya, misal data-kelas=\"1A\") — ini akan berguna kalau nanti kamu belajar membaca tabel lewat JavaScript."
     },
     {
       "id": "html-dasar-18",
@@ -217,7 +217,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Upgrade form Kontak di portofoliomu: tambahkan <textarea> untuk pesan dan <select> untuk memilih topik pesan (misal \"Kerja Sama\", \"Pertanyaan\", \"Lainnya\")."
+      "tantangan": "Kalau kamu membuat form kesan-pesan bonus di lesson Form Dasar, upgrade jadi: tambahkan <textarea> untuk pesan dan <select> untuk memilih topik (misal \"Kesan\", \"Pesan\", \"Kritik & Saran\")."
     },
     {
       "id": "html-dasar-19",
@@ -229,7 +229,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Upgrade tabel Pendidikan di portofoliomu: bungkus baris judul dengan <thead>, isi datanya dengan <tbody>, lalu tambahkan <tfoot> berisi ringkasan singkat."
+      "tantangan": "Upgrade tabel nilai di Website Pertamamu: bungkus baris judul (NO, NAMA, KELAS, NILAI) dengan <thead>, bungkus baris datanya dengan <tbody>, lalu tambahkan <tfoot> berisi satu baris ringkasan (misal \"Total 3 siswa\") dengan colspan=\"4\" supaya memenuhi lebar tabel."
     },
     {
       "id": "html-dasar-20",
@@ -241,7 +241,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
         "css": "",
         "js": ""
       },
-      "tantangan": "Tambahkan komentar HTML (mis. <!-- Section: Kontak -->) di atas tiap section besar portofoliomu untuk menandai bagiannya — dokumentasi ini akan memudahkanmu sendiri saat kodenya makin panjang."
+      "tantangan": "Tambahkan komentar HTML (misal <!-- Box 1: List --> dan <!-- Box 2: Gambar -->) di atas tiap bagian besar Website Pertamamu untuk menandai bagiannya — dokumentasi ini akan memudahkanmu sendiri saat kodenya makin panjang."
     }
   ]
 };

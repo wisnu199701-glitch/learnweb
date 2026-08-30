@@ -86,6 +86,30 @@ window.LEARNWEB_LESSONS["css-lanjutan"] = {
         "js": ""
       },
       "tantangan": "Ganti font-family judul (h1, h2) di portofoliomu memakai kombinasi font kustom + fallback, misalnya \"Poppins\", \"Segoe UI\", sans-serif."
+    },
+    {
+      "id": "css-lanjutan-8",
+      "judul": "Efek Teks Berjalan (Marquee) Lebih Rapi",
+      "penjelasan": "Trik marquee dasar (<code>padding-left: 100%</code> + <code>translateX(-100%)</code>) punya kelemahan: ada jeda kosong panjang sebelum teks muncul lagi dari kanan, dan kecepatannya beda-beda tergantung panjang teks (karena durasi tetap tapi jarak tempuh berubah). Versi lebih rapi: duplikat teksnya jadi dua <span> berdampingan di dalam satu wadah <code>display: flex</code>, lalu animasikan seluruh wadah itu bergeser sejauh <strong>lebar satu salinan teks</strong> (gunakan <code>gap</code> untuk jarak antar salinan). Karena ada dua salinan identik, begitu salinan pertama habis bergeser keluar, salinan kedua persis menggantikan posisinya — terlihat menyambung tanpa jeda (looping mulus).",
+      "contoh_kode": "<div class=\"marquee\">\n  <div class=\"marquee-track\">\n    <span>Teks berjalan tanpa jeda •&nbsp;</span>\n    <span>Teks berjalan tanpa jeda •&nbsp;</span>\n  </div>\n</div>",
+      "starter_code": {
+        "html": "<div class=\"marquee\">\n  <div class=\"marquee-track\">\n    <span>Teks berjalan tanpa jeda •&nbsp;</span>\n    <span>Teks berjalan tanpa jeda •&nbsp;</span>\n  </div>\n</div>",
+        "css": ".marquee {\n  overflow: hidden;\n  border: 1px solid #ccc;\n  padding: 8px 0;\n}\n\n.marquee-track {\n  display: flex;\n  width: max-content;\n  animation: geser 6s linear infinite;\n}\n\n@keyframes geser {\n  from { transform: translateX(0); }\n  to { transform: translateX(-50%); }\n}",
+        "js": ""
+      },
+      "tantangan": "Ganti teks berjalan \"TEKS INI SEDANG BERJALAN\" di Website Pertamamu memakai teknik dua-salinan ini (bukan padding-left: 100%) supaya animasinya menyambung mulus tanpa jeda kosong. Tambahkan juga aturan .marquee:hover .marquee-track { animation-play-state: paused; } supaya teks berhenti sesaat saat disentuh kursor."
+    },
+    {
+      "id": "css-lanjutan-9",
+      "judul": "Caption di Atas Gambar: Overlay yang Lebih Kuat",
+      "penjelasan": "Teknik <code>position: absolute</code> + <code>transform: translate(-50%, -50%)</code> sudah cukup untuk menaruh SATU baris teks di tengah gambar. Untuk caption yang lebih panjang atau perlu tetap terbaca di atas gambar terang MAUPUN gelap, tambahkan lapisan gradient gelap transparan di antara gambar dan teks (<code>linear-gradient</code> dengan warna <code>rgba(0,0,0, ...)</code>), dan letakkan caption di salah satu sisi (misal <code>bottom</code>) memakai <code>width: 100%</code>, bukan cuma dikunci di tengah presisi.",
+      "contoh_kode": "<div class=\"gambar-wadah\">\n  <img src=\"https://via.placeholder.com/300x180\" alt=\"Contoh\">\n  <div class=\"overlay-gradient\"></div>\n  <p class=\"caption\">Judul Foto di Sini</p>\n</div>",
+      "starter_code": {
+        "html": "<div class=\"gambar-wadah\">\n  <img src=\"https://via.placeholder.com/300x180\" alt=\"Contoh\">\n  <div class=\"overlay-gradient\"></div>\n  <p class=\"caption\">Judul Foto di Sini</p>\n</div>",
+        "css": ".gambar-wadah {\n  position: relative;\n  display: inline-block;\n}\n\n.gambar-wadah img {\n  display: block;\n  max-width: 100%;\n}\n\n.overlay-gradient {\n  position: absolute;\n  inset: 0;\n  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent 60%);\n}\n\n.caption {\n  position: absolute;\n  bottom: 12px;\n  left: 0;\n  width: 100%;\n  margin: 0;\n  text-align: center;\n  color: white;\n  font-weight: bold;\n}",
+        "js": ""
+      },
+      "tantangan": "Perkuat caption \"INI TULISAN DI DALAM GAMBAR\" di box-2 Website Pertamamu: tambahkan lapisan .overlay-gradient di antara gambar dan teksnya, lalu pindahkan captionnya ke bagian bawah gambar (bottom + width: 100%) alih-alih dikunci pas di tengah — bandingkan mana yang menurutmu lebih enak dilihat."
     }
   ]
 };

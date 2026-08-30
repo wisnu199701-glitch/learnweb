@@ -110,6 +110,18 @@ window.LEARNWEB_LESSONS["javascript-lanjutan"] = {
         "js": "async function ambilUser() {\n  try {\n    const response = await fetch(\"https://jsonplaceholder.typicode.com/users/1\");\n    const data = await response.json();\n    console.log(\"Nama:\", data.name);\n    console.log(\"Email:\", data.email);\n  } catch (error) {\n    console.log(\"Gagal mengambil data:\", error);\n  }\n}\n\nambilUser();"
       },
       "tantangan": "Tambahkan widget kecil \"Quote of the Day\" di portofoliomu (misal di footer) yang mengambil kutipan dari API publik lewat fetch() setiap kali halaman dibuka."
+    },
+    {
+      "id": "javascript-lanjutan-10",
+      "judul": "Render & Sortir Tabel dari Array",
+      "penjelasan": "Daripada menulis <code>&lt;tr&gt;</code>/<code>&lt;td&gt;</code> manual satu per satu, tabel bisa dibuat otomatis dari array of object lewat <code>map()</code> lalu digabung dengan <code>join(\"\")</code>, kemudian dimasukkan ke <code>&lt;tbody&gt;</code> lewat <code>innerHTML</code>. Untuk sortir, pakai <code>array.slice().sort((a, b) => ...)</code> — <code>slice()</code> penting supaya array aslinya tidak ikut berubah urutan (method <code>sort()</code> memodifikasi array sumbernya langsung/mutating).",
+      "contoh_kode": "const siswa = [\n  { nama: \"ALIF\", kelas: \"1A\", nilai: 75 },\n  { nama: \"NURMAN\", kelas: \"1B\", nilai: 85 },\n  { nama: \"ABDUL\", kelas: \"1C\", nilai: 95 }\n];\n\nfunction renderTabel(data) {\n  const baris = data.map(function (s, i) {\n    return \"<tr><td>\" + (i + 1) + \"</td><td>\" + s.nama + \"</td><td>\" + s.kelas + \"</td><td>\" + s.nilai + \"</td></tr>\";\n  }).join(\"\");\n  document.querySelector(\"#tabel-nilai tbody\").innerHTML = baris;\n}\n\nrenderTabel(siswa);\n\ndocument.querySelector(\"#urutkan-btn\").addEventListener(\"click\", function () {\n  const terurut = siswa.slice().sort(function (a, b) { return b.nilai - a.nilai; });\n  renderTabel(terurut);\n});",
+      "starter_code": {
+        "html": "<button id=\"urutkan-btn\">Urutkan berdasarkan Nilai (tertinggi)</button>\n<table id=\"tabel-nilai\" border=\"1\">\n  <thead>\n    <tr><th>NO</th><th>NAMA</th><th>KELAS</th><th>NILAI</th></tr>\n  </thead>\n  <tbody></tbody>\n</table>",
+        "css": "table { border-collapse: collapse; width: 100%; max-width: 400px; margin-top: 12px; }\nth, td { border: 1px solid #4f46e5; padding: 8px; text-align: center; }\nth { background: #4f46e5; color: white; }",
+        "js": "const siswa = [\n  { nama: \"ALIF\", kelas: \"1A\", nilai: 75 },\n  { nama: \"NURMAN\", kelas: \"1B\", nilai: 85 },\n  { nama: \"ABDUL\", kelas: \"1C\", nilai: 95 }\n];\n\nfunction renderTabel(data) {\n  const baris = data.map(function (s, i) {\n    return \"<tr><td>\" + (i + 1) + \"</td><td>\" + s.nama + \"</td><td>\" + s.kelas + \"</td><td>\" + s.nilai + \"</td></tr>\";\n  }).join(\"\");\n  document.querySelector(\"#tabel-nilai tbody\").innerHTML = baris;\n}\n\nrenderTabel(siswa);\n\ndocument.querySelector(\"#urutkan-btn\").addEventListener(\"click\", function () {\n  const terurut = siswa.slice().sort(function (a, b) { return b.nilai - a.nilai; });\n  renderTabel(terurut);\n});"
+      },
+      "tantangan": "Ubah tabel nilai di Website Pertamamu jadi dinamis: pindahkan data 3 siswanya (nama, kelas, nilai) ke sebuah array of object di JS, hapus baris <tr> manual di HTML (sisakan <thead> dan <tbody> kosong), lalu render otomatis lewat map()+join(). Tambahkan juga satu tombol untuk mengurutkan tabel dari nilai tertinggi ke terendah."
     }
   ]
 };

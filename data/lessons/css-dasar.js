@@ -13,7 +13,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": "p {\n  color: blue;\n}",
         "js": ""
       },
-      "tantangan": "Mulai styling portofoliomu: tambahkan CSS internal yang mengatur font-family body ke sans-serif untuk seluruh halaman."
+      "tantangan": "Mulai styling Website Pertamamu: tambahkan CSS internal yang mengatur font-family body ke sans-serif untuk seluruh halaman (elemen yang sudah punya font-family sendiri, seperti judul dan teks font Algerian, tidak akan berubah karena aturan yang lebih spesifik menang atas aturan body)."
     },
     {
       "id": "css-dasar-2",
@@ -25,7 +25,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": "#judul-utama {\n  color: darkblue;\n}\n\n.catatan {\n  color: gray;\n  font-style: italic;\n}",
         "js": ""
       },
-      "tantangan": "Styling judul portofoliomu: beri warna berbeda untuk h1 (nama) lewat selector tag, dan warna lain untuk h2 (judul tiap section) juga lewat selector tag."
+      "tantangan": "Pastikan dua box di Website Pertamamu (dari lesson Div dan Span) sudah punya class box-1 dan box-2, lalu buat dua aturan CSS kosong: .box-1 { } dan .box-2 { } — akan diisi properti di lesson-lesson berikutnya."
     },
     {
       "id": "css-dasar-3",
@@ -37,7 +37,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".kotak {\n  background-color: #4f46e5;\n  color: white;\n  padding: 20px;\n  text-align: center;\n}",
         "js": ""
       },
-      "tantangan": "Beri background-color pada <header> portofoliomu (bagian nama+tagline) dan pastikan warna tekstnya tetap kontras dan mudah dibaca."
+      "tantangan": "Ganti selector .box-1 { } dan .box-2 { } di Website Pertamamu jadi satu aturan gabungan .box-1, .box-2 { }, lalu beri background-color warna lembut (misal #eef0ff) supaya kedua box punya warna latar yang sama."
     },
     {
       "id": "css-dasar-4",
@@ -49,7 +49,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".box {\n  padding: 16px;\n  border: 3px solid #4f46e5;\n  margin: 20px;\n  background-color: #eef0ff;\n}",
         "js": ""
       },
-      "tantangan": "Beri padding, margin, dan border pada tiap .section di portofoliomu supaya tiap bagian terlihat seperti kartu yang terpisah rapi."
+      "tantangan": "Ini langkah yang membuat box-mu beneran terlihat seperti KOTAK: tambahkan padding (misal 16px), border (misal 2px solid, pilih warna favoritmu), dan margin (misal 16px auto) pada aturan .box-1, .box-2 di Website Pertamamu. Sekarang \"TEKS BOX 1\" dan \"TEKS BOX 2\" akhirnya terlihat seperti box sungguhan."
     },
     {
       "id": "css-dasar-5",
@@ -61,7 +61,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".container {\n  display: flex;\n  gap: 10px;\n  justify-content: center;\n}\n\n.item {\n  background: #4f46e5;\n  color: white;\n  padding: 20px;\n  border-radius: 8px;\n}",
         "js": ""
       },
-      "tantangan": "Susun foto profil dan bagian nama/tagline di header portofoliomu agar sejajar berdampingan memakai display: flex."
+      "tantangan": "Sebagai latihan tambahan (opsional): bungkus box-1 dan box-2 di Website Pertamamu dengan satu <div class=\"kontainer-box\">, beri display: flex; gap: 16px; supaya keduanya tampil berdampingan alih-alih bertumpuk ke bawah. Kalau lebih suka tampilan bertumpuk seperti rencana awal, lewati saja lesson ini."
     },
     {
       "id": "css-dasar-6",
@@ -73,7 +73,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".card {\n  background: #eef0ff;\n  padding: 40px;\n  text-align: center;\n  font-size: 20px;\n}\n\n@media (max-width: 600px) {\n  .card {\n    background: #ffe4e6;\n    font-size: 14px;\n  }\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan media query supaya susunan flex foto+nama di header portofoliomu berubah jadi tumpuk vertikal saat layar sempit (max-width: 600px)."
+      "tantangan": "Sebagai latihan tambahan (opsional): kalau kamu menyusun box-1 dan box-2 berdampingan di lesson Flexbox Dasar, tambahkan media query supaya keduanya kembali bertumpuk vertikal saat layar sempit (max-width: 600px)."
     },
     {
       "id": "css-dasar-7",
@@ -85,7 +85,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".a {\n  width: 200px;\n  background: #eef0ff;\n}\n\n.b {\n  width: 50%;\n  background: #dcfce7;\n}\n\n.c {\n  padding: 2rem;\n  background: #ffe4e6;\n}",
         "js": ""
       },
-      "tantangan": "Ganti beberapa ukuran font atau padding di portofoliomu dari px ke rem, supaya ukurannya lebih konsisten di seluruh halaman."
+      "tantangan": "Sebagai latihan tambahan (opsional): ganti padding pada .box-1, .box-2 di Website Pertamamu dari px ke rem, supaya ukurannya lebih konsisten kalau nanti kamu ubah ukuran font dasar halaman."
     },
     {
       "id": "css-dasar-8",
@@ -97,7 +97,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".judul {\n  font-family: Georgia, serif;\n  text-align: center;\n  text-decoration: underline;\n}\n\n.isi {\n  font-family: Arial, sans-serif;\n  font-size: 16px;\n  line-height: 1.8;\n}",
         "js": ""
       },
-      "tantangan": "Atur line-height dan text-align pada paragraf bio di bagian Tentang Saya supaya nyaman dibaca."
+      "tantangan": "Tambahkan paragraf baru di Website Pertamamu, setelah box-2 dan sebelum tombol Google: <p>Kami adalah siswa dan siswi MIMU yang sedang belajar CODING HTML/CSS/JS untuk membuat website dan app web.</p>. Beri class khusus pada paragraf ini, lalu atur line-height (misal 1.6) dan text-align: center; supaya nyaman dibaca."
     },
     {
       "id": "css-dasar-9",
@@ -109,7 +109,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".wadah {\n  text-align: center;\n}\n\n.gambar-mandiri {\n  display: block;\n  margin: 0 auto;\n}",
         "js": ""
       },
-      "tantangan": "Bungkus foto profil di portofoliomu dengan sebuah <div> baru, beri class lalu text-align: center supaya foto ikut rata tengah. Setelah itu coba cara kedua: hapus wadahnya, dan pakai display: block; margin: 0 auto; langsung pada tag <img>-nya untuk hasil yang sama tanpa perlu pembungkus."
+      "tantangan": "Tengahkan gambar di dalam box-2 milik Website Pertamamu: kalau .box-1, .box-2 sudah punya text-align: center dari sebelumnya, gambarnya otomatis ikut rata tengah karena <img> bersifat inline. Kalau box-mu TIDAK rata tengah, pakai cara kedua: beri gambar itu sendiri display: block; margin: 0 auto; untuk hasil yang sama."
     },
     {
       "id": "css-dasar-10",
@@ -121,7 +121,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".kartu {\n  padding: 20px;\n  border-radius: 12px;\n  box-shadow: 0 4px 10px rgba(0,0,0,0.2);\n  background: white;\n  margin-bottom: 16px;\n}\n\n.lingkaran {\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  background: #4f46e5;\n}",
         "js": ""
       },
-      "tantangan": "Buat foto profil di portofoliomu jadi bulat sempurna (border-radius: 50%), lalu tambahkan box-shadow pada tiap .section supaya terlihat lebih menonjol."
+      "tantangan": "Perhalus tampilan .box-1, .box-2 di Website Pertamamu: tambahkan border-radius (misal 12px) supaya sudutnya melengkung, dan box-shadow supaya box-nya terlihat sedikit \"terangkat\" dari halaman."
     },
     {
       "id": "css-dasar-11",
@@ -133,7 +133,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".tag {\n  background: #4f46e5;\n  color: white;\n  padding: 8px;\n  margin: 4px;\n}\n\n.inline {\n  display: inline;\n}\n\n.inline-block {\n  display: inline-block;\n  width: 120px;\n}\n\n.block {\n  display: block;\n}\n\n.sembunyi {\n  display: none;\n}",
         "js": ""
       },
-      "tantangan": "Ubah tampilan daftar Keahlian di portofoliomu jadi \"chip/badge\": beri tiap <li> display: inline-block dengan background warna dan border-radius."
+      "tantangan": "Ubah tombol \"TEKAN UNTUK PERGI KE GOOGLE\" di Website Pertamamu supaya terlihat seperti tombol sungguhan: beri class khusus, set display: inline-block;, tambahkan padding, background-color, color: white;, dan text-decoration: none; supaya garis bawah link hilang."
     },
     {
       "id": "css-dasar-12",
@@ -145,7 +145,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".induk {\n  position: relative;\n  width: 200px;\n  padding: 20px;\n  background: #eef0ff;\n}\n\n.badge {\n  position: absolute;\n  top: 8px;\n  right: 8px;\n  background: red;\n  color: white;\n  padding: 2px 8px;\n  border-radius: 6px;\n  font-size: 12px;\n}",
         "js": ""
       },
-      "tantangan": "Buat <header> portofoliomu position: sticky di bagian atas supaya tetap terlihat saat halaman di-scroll ke bawah."
+      "tantangan": "Bagian paling seru: buat teks \"INI TULISAN DI DALAM GAMBAR\" tampil MENUMPANG di atas gambar di box-2. Caranya: bungkus <img> dan <p>INI TULISAN DI DALAM GAMBAR</p> dengan satu <div class=\"gambar-wadah\"> baru, beri div itu position: relative;. Lalu beri <p> teksnya position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); supaya pas di tengah gambar, tambahkan juga color: white; dan text-shadow: 1px 1px 3px black; supaya tetap terbaca di atas gambar apa pun warnanya."
     },
     {
       "id": "css-dasar-13",
@@ -157,7 +157,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".grid {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  gap: 10px;\n}\n\n.sel {\n  background: #4f46e5;\n  color: white;\n  padding: 20px;\n  text-align: center;\n  border-radius: 8px;\n}",
         "js": ""
       },
-      "tantangan": "Ubah layout daftar Keahlian di portofoliomu jadi grid 2-3 kolom memakai display: grid dan grid-template-columns."
+      "tantangan": "Sebagai latihan tambahan (opsional): kalau kamu punya lebih dari 2 box di Website Pertamamu, coba susun semuanya dengan display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); alih-alih ditumpuk manual."
     },
     {
       "id": "css-dasar-14",
@@ -169,7 +169,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".tombol {\n  padding: 10px 20px;\n  background: #4f46e5;\n  color: white;\n  border: none;\n  border-radius: 6px;\n}\n\n.tombol:hover {\n  background: #4338ca;\n}\n\nli:first-child {\n  font-weight: bold;\n}\n\nli::before {\n  content: \"👉 \";\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan efek :hover pada link kontak/sosial media di portofoliomu, dan ::before berupa ikon kecil (misal \"✓ \") di tiap item daftar Keahlian."
+      "tantangan": "Tambahkan efek :hover pada tombol \"TEKAN UNTUK PERGI KE GOOGLE\" di Website Pertamamu (misal background jadi lebih gelap saat kursor di atasnya), supaya terasa lebih interaktif. Sebagai bonus, tambahkan ::before berupa ikon kecil (misal \"👉 \") di tiap <li> pada list box-1."
     },
     {
       "id": "css-dasar-15",
@@ -181,7 +181,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ".box-transisi {\n  width: 100px;\n  padding: 10px;\n  background: #4f46e5;\n  color: white;\n  text-align: center;\n  transition: transform 0.3s ease;\n}\n\n.box-transisi:hover {\n  transform: scale(1.2);\n}\n\n.box-animasi {\n  width: 40px;\n  height: 40px;\n  background: #f59e0b;\n  border-radius: 50%;\n  margin-top: 16px;\n  animation: pantul 1s infinite alternate;\n}\n\n@keyframes pantul {\n  from { transform: translateY(0); }\n  to { transform: translateY(30px); }\n}",
         "js": ""
       },
-      "tantangan": "Beri transition halus pada tombol kirim di form Kontak portofoliomu (efek :hover), dan tambahkan animasi fade-in ringan pada header saat halaman pertama kali dimuat."
+      "tantangan": "Saatnya bikin \"TEKS INI SEDANG BERJALAN\" beneran BERJALAN! Tambahkan <div class=\"teks-berjalan-wadah\"><p class=\"teks-berjalan\">TEKS INI SEDANG BERJALAN</p></div> di Website Pertamamu. Beri wadahnya overflow: hidden; white-space: nowrap;. Lalu pada teksnya, beri display: inline-block; padding-left: 100%; dan animation: geser 8s linear infinite;, dengan @keyframes geser dari transform: translateX(0); ke transform: translateX(-100%); — teksnya akan bergeser terus-menerus dari kanan ke kiri seperti marquee."
     },
     {
       "id": "css-dasar-16",
@@ -193,7 +193,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
         "css": ":root {\n  --warna-utama: #4f46e5;\n  --radius: 8px;\n}\n\n.judul {\n  color: var(--warna-utama);\n}\n\n.tombol {\n  background: var(--warna-utama);\n  color: white;\n  border: none;\n  padding: 10px 16px;\n  border-radius: var(--radius);\n}",
         "js": ""
       },
-      "tantangan": "Pindahkan warna-warna utama portofoliomu ke CSS variables di :root (misal --warna-utama, --warna-bg), lalu ganti semua penggunaan warna langsung dengan var(...) — ini akan memudahkan bikin dark mode nanti di lesson JavaScript."
+      "tantangan": "Pindahkan warna-warna utama Website Pertamamu (warna border box, warna tombol Google, dst) ke CSS variables di :root (misal --warna-utama, --warna-bg), lalu ganti semua penggunaan warna langsung dengan var(...) — ini akan memudahkan bikin dark mode nanti di lesson JavaScript."
     }
   ]
 };
