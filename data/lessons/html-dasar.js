@@ -29,51 +29,51 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
     },
     {
       "id": "html-dasar-3",
-      "judul": "Font Tulisan Langsung di Tag (Inline CSS)",
-      "penjelasan": "<p>Sekarang jeda sebentar dari HTML murni — waktunya sentuhan pertama <strong>CSS</strong> (Cascading Style Sheets), bahasa untuk mengatur TAMPILAN. Cara paling sederhana menulis CSS (cocok untuk pemula): langsung di DALAM tag itu sendiri, pakai atribut <code>style</code>. Ini disebut <strong>inline CSS</strong> — tidak perlu blok terpisah, tidak perlu selector, cukup satu atribut di tag yang mau diubah.</p><p>Formatnya: <code>style=\"properti: nilai;\"</code>. Properti <code>font-family</code> mengganti jenis huruf.</p>",
-      "contoh_kode": "<p style=\"font-family: Georgia, serif;\">Paragraf dengan font berbeda.</p>",
+      "judul": "Mengganti Font Tulisan (CSS)",
+      "penjelasan": "<p>Sekarang jeda sebentar dari HTML — waktunya sentuhan pertama <strong>CSS</strong> (Cascading Style Sheets), bahasa untuk mengatur TAMPILAN, bukan struktur. CSS ditulis di dalam tag <code>&lt;style&gt;</code>, biasanya diletakkan di <code>&lt;head&gt;</code>.</p><p>Pola dasar menulis CSS: <code>selector { properti: nilai; }</code>. Selector menentukan elemen mana yang diubah (misal <code>h1</code> berarti \"semua tag h1\"), lalu di dalam kurung kurawal kita atur propertinya. Properti <code>font-family</code> mengganti jenis huruf yang dipakai.</p>",
+      "contoh_kode": "<style>\n  h1 {\n    font-family: Georgia, serif;\n  }\n</style>\n\n<h1>Judul dengan Font Georgia</h1>",
       "starter_code": {
-        "html": "<p>Ini paragraf contoh.</p>",
+        "html": "<h1>Judulku</h1>",
         "css": "",
         "js": ""
       },
-      "tantangan": "Pilih satu <p> di portofoliomu (misalnya paragraf tagline di bawah namamu), lalu tambahkan atribut style=\"font-family: ...;\" LANGSUNG di tag <p> itu — tidak perlu kotak CSS terpisah, cukup di dalam tag HTML-nya saja. Contoh: font-family: Georgia, serif; atau \"Courier New\", monospace;"
+      "tantangan": "Tambahkan tag <style> (kalau belum ada) di kotak CSS, lalu buat aturan untuk h1 (nama) di portofoliomu supaya font-nya berubah — coba font-family: Georgia, serif; atau \"Courier New\", monospace;"
     },
     {
       "id": "html-dasar-4",
-      "judul": "Menambah Warna, Tetap di Baris yang Sama",
-      "penjelasan": "Mau tambah properti CSS lain? Tidak perlu bikin atribut style baru — cukup tambahkan di DALAM atribut style yang sama, dipisah titik koma (<code>;</code>). Properti <code>color</code> mengubah warna teks. Nilainya bisa nama warna (<code>red</code>), kode hex (<code>#4f46e5</code>), atau <code>rgb(79, 70, 229)</code>.",
-      "contoh_kode": "<p style=\"font-family: Georgia, serif; color: #4f46e5;\">Paragraf dengan font dan warna, masih satu baris.</p>",
+      "judul": "Mengganti Warna Teks (CSS)",
+      "penjelasan": "Properti <code>color</code> mengubah warna TEKS (bukan latar belakangnya). Nilainya bisa nama warna (<code>red</code>, <code>blue</code>), kode hex (<code>#4f46e5</code>), atau <code>rgb(79, 70, 229)</code>. Selector-nya sama seperti sebelumnya — tulis nama tag yang mau diubah, lalu tambahkan properti baru di baris berikutnya di dalam kurung kurawal yang sama.",
+      "contoh_kode": "<style>\n  h1 {\n    font-family: Georgia, serif;\n    color: #4f46e5;\n  }\n</style>\n\n<h1>Judul Berwarna</h1>",
       "starter_code": {
-        "html": "<p style=\"font-family: Georgia, serif;\">Ini paragraf contoh.</p>",
-        "css": "",
+        "html": "<h1>Judulku</h1>",
+        "css": "h1 {\n  font-family: Georgia, serif;\n}",
         "js": ""
       },
-      "tantangan": "Buka lagi <p> yang tadi kamu kasih style. JANGAN buat atribut style baru — tambahkan color: ...; di DALAM atribut style yang sudah ada, setelah font-family, dipisah titik koma. Semua tetap satu baris, satu tag."
+      "tantangan": "Tambahkan properti color pada aturan h1 yang sama (di baris baru, masih di dalam kurung kurawal yang sama), pilih warna favoritmu (nama warna atau kode hex)."
     },
     {
       "id": "html-dasar-5",
-      "judul": "Menambah Ukuran, Masih Satu Baris",
-      "penjelasan": "Sama seperti sebelumnya: tambahkan <code>font-size: nilai;</code> di dalam atribut style yang sama, setelah properti-properti yang sudah ada. Untuk pemula, satuan paling gampang dipahami adalah <code>px</code> (piksel) — angka lebih besar berarti teks lebih besar.",
-      "contoh_kode": "<p style=\"font-family: Georgia, serif; color: #4f46e5; font-size: 20px;\">Paragraf dengan font, warna, dan ukuran, masih satu baris.</p>",
+      "judul": "Mengubah Ukuran Teks (CSS)",
+      "penjelasan": "Properti <code>font-size</code> mengatur besar-kecilnya teks. Untuk pemula, satuan paling gampang dipahami adalah <code>px</code> (piksel) — angka lebih besar berarti teks lebih besar. Kamu bisa memberi ukuran berbeda untuk tag berbeda, misalnya <code>h1</code> besar dan <code>p</code> lebih kecil, dengan menulis dua blok selector terpisah.",
+      "contoh_kode": "<style>\n  h1 {\n    font-size: 40px;\n  }\n\n  p {\n    font-size: 16px;\n  }\n</style>\n\n<h1>Judul Besar</h1>\n<p>Paragraf ukuran normal.</p>",
       "starter_code": {
-        "html": "<p style=\"font-family: Georgia, serif; color: #4f46e5;\">Ini paragraf contoh.</p>",
-        "css": "",
+        "html": "<h1>Judulku</h1>",
+        "css": "h1 {\n  font-family: Georgia, serif;\n  color: #4f46e5;\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan font-size: ...; di dalam atribut style yang sama pada <p> tadi (misalnya font-size: 18px; atau 20px;) — masih di baris yang sama, tidak dipindah ke tempat lain."
+      "tantangan": "Tambahkan font-size pada aturan h1 (coba 36px-48px), lalu buat aturan baru untuk tag p dengan font-size lebih kecil (misal 16px) supaya perbedaan judul vs teks biasa makin terlihat."
     },
     {
       "id": "html-dasar-6",
-      "judul": "Menambah Background, Tetap Satu Baris",
-      "penjelasan": "<code>background-color</code> mengatur warna LATAR di belakang teks — beda dengan <code>color</code> yang mengubah warna tulisannya. Tambahkan lagi ke atribut style yang sama, seperti properti-properti sebelumnya. Hati-hati memilih kombinasi warna teks dan background supaya tetap kontras/mudah dibaca. <strong>Setelah ini kamu sudah paham 4 properti CSS dasar hanya lewat SATU atribut style</strong> — nanti di modul CSS Dasar kita belajar cara yang lebih rapi (pakai selector) supaya tidak perlu menulis ulang style yang sama di tiap tag satu-satu.",
-      "contoh_kode": "<p style=\"font-family: Georgia, serif; color: #4f46e5; font-size: 20px; background-color: #eef0ff;\">Paragraf lengkap dengan 4 gaya, tetap satu baris.</p>",
+      "judul": "Menambahkan Background ke Teks (CSS)",
+      "penjelasan": "<code>background-color</code> mengatur warna LATAR di belakang elemen — beda dengan <code>color</code> yang mengubah warna teksnya. Properti ini bisa dipasang ke elemen apa saja, termasuk <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, bahkan <code>&lt;body&gt;</code> untuk mengubah warna latar seluruh halaman. Hati-hati memilih kombinasi warna teks dan background supaya tetap mudah dibaca (kontras cukup tinggi).",
+      "contoh_kode": "<style>\n  h1 {\n    background-color: #4f46e5;\n    color: white;\n    padding: 12px;\n  }\n</style>\n\n<h1>Judul dengan Background</h1>",
       "starter_code": {
-        "html": "<p style=\"font-family: Georgia, serif; color: #4f46e5; font-size: 20px;\">Ini paragraf contoh.</p>",
-        "css": "",
+        "html": "<h1>Judulku</h1>",
+        "css": "h1 {\n  font-family: Georgia, serif;\n  font-size: 40px;\n  color: #4f46e5;\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan background-color: ...; di atribut style yang sama pada <p> tadi. Pastikan warna teks dan background-nya tetap kontras (mudah dibaca). Boleh dicoba juga pada nama (h1) dan tagline portofoliomu, masing-masing di atribut style tag-nya sendiri."
+      "tantangan": "Beri background-color pada nama dan tagline portofoliomu (h1 dan p tagline), pastikan warna tekstnya tetap kontras/mudah dibaca di atas background baru. Boleh tambahkan padding sedikit supaya tidak terlalu mepet."
     },
     {
       "id": "html-dasar-7",
