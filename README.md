@@ -1,6 +1,6 @@
 # LearnWeb
 
-Website statis untuk belajar HTML dan CSS dari nol — tanpa framework, tanpa build tool. Jalur belajar saat ini sengaja disederhanakan jadi 2 modul (HTML Dasar → CSS Dasar, total 42 lesson): materi disusun per topik (Teks → CSS untuk Teks → Gambar → Tabel → topik HTML lainnya), baru di bagian akhir tiap modul ada beberapa lesson "Tugas" yang menggabungkan semuanya jadi satu praktik nyata. Modul lanjutan (JavaScript, HTML/CSS/JS Lanjutan, Proyek Gabungan) untuk sementara dinonaktifkan dari alur — file datanya masih ada di `data/lessons/`, tinggal didaftarkan lagi di `assets/js/app.js` kalau mau diaktifkan.
+Website statis untuk belajar HTML dan CSS dari nol — tanpa framework, tanpa build tool. Jalur belajar saat ini sengaja disederhanakan jadi 1 tuntunan berurutan lewat 2 modul (HTML Dasar → CSS Dasar, total 14 lesson): tiap lesson langsung membangun satu bagian dari SATU target akhir yang sama — replika persis sebuah halaman "Website Pertama" (judul + font unik, dua kotak berisi list & gambar dengan teks di atasnya, paragraf, tombol link, teks berjalan, dan tabel nilai). Modul lanjutan (JavaScript, HTML/CSS/JS Lanjutan, Proyek Gabungan) untuk sementara dinonaktifkan dari alur — file datanya masih ada di `data/lessons/`, tinggal didaftarkan lagi di `assets/js/app.js` kalau mau diaktifkan.
 
 **🔗 Demo Langsung:** https://tinyurl.com/coding-html-lesson
 (alamat asli: https://wisnu199701-glitch.github.io/learnweb/)
