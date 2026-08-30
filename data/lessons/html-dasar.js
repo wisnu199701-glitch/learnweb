@@ -90,14 +90,14 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
     {
       "id": "html-dasar-8",
       "judul": "Mengatur Ukuran Background: Pas Teks atau Penuh",
-      "penjelasan": "Perhatikan background yang baru kamu buat di h1 — kalau <code>&lt;h1&gt;</code> ada di dalam wadah lain, backgroundnya bisa melebar penuh selebar wadah itu, padahal teksnya cuma sedikit. Itu karena <code>&lt;h1&gt;</code> adalah elemen <em>block</em> yang otomatis melebar 100% dari induknya. Kalau mau backgroundnya cuma <strong>sepas teksnya saja</strong>, tambahkan <code>display: inline-block;</code> (atau <code>width: fit-content;</code>) pada aturan yang sama. Kalau justru mau tetap melebar <strong>penuh</strong> selebar wadahnya, biarkan saja — itu sudah defaultnya, atau tegaskan dengan <code>width: 100%;</code>.",
-      "contoh_kode": "<style>\n  h1 {\n    background-color: #4f46e5;\n  }\n\n  h1.pas-teks {\n    display: inline-block;\n  }\n</style>\n\n<h1>Latar Penuh (default)</h1>\n<h1 class=\"pas-teks\">Latar Pas Teks</h1>",
+      "penjelasan": "<p>Perhatikan background yang baru kamu buat di h1 — kalau <code>&lt;h1&gt;</code> ada di dalam wadah lain, backgroundnya bisa melebar penuh selebar wadah itu, padahal teksnya cuma sedikit. Itu karena <code>&lt;h1&gt;</code> adalah elemen <em>block</em> yang otomatis melebar 100% dari induknya. Kalau mau backgroundnya cuma <strong>sepas teksnya saja</strong>, tambahkan <code>display: inline-block;</code> pada aturan yang sama.</p><p><strong>⚠️ Efek samping yang sering bikin bingung:</strong> begitu h1 diberi <code>display: inline-block</code>, kotaknya MENGECIL pas sebesar teksnya sendiri. Kalau sebelumnya kamu sudah punya <code>text-align: center</code> DI DALAM aturan h1 itu, efeknya jadi \"hilang\" — bukan beneran hilang, tapi karena kotaknya sudah pas sebesar teks, tidak ada lagi ruang kosong di kiri-kanan untuk digeser ke tengah, jadi hasilnya h1 malah nempel ke KIRI halaman. Solusinya: pindahkan <code>text-align: center</code> ke elemen PEMBUNGKUSNYA (misalnya <code>body</code>), bukan di h1 itu sendiri — supaya h1 yang sudah mengecil tadi tetap diposisikan di tengah oleh induknya.</p>",
+      "contoh_kode": "<style>\n  body {\n    text-align: center;\n  }\n\n  h1 {\n    background-color: #4f46e5;\n    display: inline-block;\n  }\n</style>\n\n<h1>Latar Pas Teks, Tetap di Tengah Halaman</h1>",
       "starter_code": {
         "html": "<h1>Judulku</h1>",
         "css": "h1 {\n  text-align: center;\n  font-family: Georgia, serif;\n  font-size: 40px;\n  color: #4f46e5;\n  background-color: #eef0ff;\n}",
         "js": ""
       },
-      "tantangan": "Tambahkan display: inline-block; di DALAM aturan h1 yang sama supaya background namamu cuma sepanjang tulisannya, tidak melebar penuh. Coba hapus lagi propertinya untuk membandingkan bedanya, lalu putuskan mana yang lebih kamu suka untuk portofoliomu."
+      "tantangan": "Pindahkan text-align: center; dari aturan h1 ke aturan body yang baru (buat body { text-align: center; } terpisah). Setelah itu, baru tambahkan display: inline-block; di aturan h1 supaya backgroundnya cuma sepanjang namamu — dan karena text-align sudah dipindah ke body, h1-nya akan tetap di tengah halaman meski kotaknya mengecil."
     },
     {
       "id": "html-dasar-9",
@@ -106,7 +106,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
       "contoh_kode": "<style>\n  h1 {\n    animation: warnaBerubah 2s infinite alternate;\n  }\n\n  @keyframes warnaBerubah {\n    from {\n      color: #4f46e5;\n    }\n    to {\n      color: #f59e0b;\n    }\n  }\n</style>\n\n<h1>Judul yang Berubah Warna</h1>",
       "starter_code": {
         "html": "<h1>Judulku</h1>",
-        "css": "h1 {\n  text-align: center;\n  font-family: Georgia, serif;\n  font-size: 40px;\n  color: #4f46e5;\n  background-color: #eef0ff;\n  display: inline-block;\n}",
+        "css": "body {\n  text-align: center;\n}\n\nh1 {\n  font-family: Georgia, serif;\n  font-size: 40px;\n  color: #4f46e5;\n  background-color: #eef0ff;\n  display: inline-block;\n}",
         "js": ""
       },
       "tantangan": "Tambahkan animation: namaAnimasi 2s infinite alternate; di dalam aturan h1 yang sama, lalu buat @keyframes baru (di luar aturan h1, sejajar dengannya) dengan nama yang sama, isi from dan to dengan dua warna berbeda supaya namamu berubah warna pelan-pelan secara terus-menerus."
