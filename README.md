@@ -2,6 +2,9 @@
 
 Website statis untuk belajar HTML, CSS, dan JavaScript dari nol — tanpa framework, tanpa build tool. Berisi jalur belajar 7 modul (HTML/CSS/JavaScript Dasar → HTML/CSS/JavaScript Lanjutan → Proyek Gabungan, total 69 lesson), tiap lesson dilengkapi penjelasan, contoh kode, dan live code playground.
 
+**🔗 Demo Langsung:** https://tinyurl.com/coding-html-lesson
+(alamat asli: https://wisnu199701-glitch.github.io/learnweb/)
+
 **Project berkelanjutan:** playground di semua lesson berbagi SATU kode yang sama (tersimpan otomatis di `localStorage`, lihat `assets/js/project.js`). Mulai dari lesson pertama (kotak kode kosong), setiap "Tantangan" mengarahkan menambah bagian baru ke website yang sama, sampai di lesson terakhir jadi satu Website Portofolio Pribadi yang utuh. Tombol "🗑 Reset Total" di playground menghapus seluruh progress ini (beda dari lesson biasa yang cuma reset ke starter code lesson itu sendiri). Sandbox (`sandbox.html`) tetap terpisah, tidak ikut project ini.
 
 Lihat `LEARNWEB_SPEC.md` untuk spesifikasi lengkap proyek ini.
