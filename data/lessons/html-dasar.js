@@ -66,26 +66,26 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
     {
       "id": "html-dasar-6",
       "judul": "List & Kotak Pertama (Box 1)",
-      "penjelasan": "<p>Sesuai rencana, sekarang kita buat \"TEKS BOX 1\": sebuah kotak berlabel tebal yang isinya sebuah list. Tiga tag baru:</p><ul><li><code>&lt;div&gt;</code> — elemen pembungkus generik, dipakai bersama <code>class</code> supaya bisa distyling nanti (kotaknya akan benar-benar terlihat seperti kotak di modul CSS Dasar).</li><li><code>&lt;strong&gt;</code> — membuat teks tebal, dipakai untuk label \"TEKS BOX 1\".</li><li><code>&lt;ul&gt;</code>/<code>&lt;li&gt;</code> — daftar tanpa urutan (bullet), tiap item ditulis dengan <code>&lt;li&gt;</code>.</li></ul>",
-      "contoh_kode": "<div class=\"box box-1\">\n  <p><strong>TEKS BOX 1</strong></p>\n  <p>Kita buat list :</p>\n  <ul>\n    <li>AN-NASS</li>\n    <li>AL-FALAQ</li>\n    <li>AL-IKHLAS</li>\n  </ul>\n</div>",
+      "penjelasan": "<p>Sesuai rencana, sekarang kita buat \"TEKS BOX 1\": sebuah kotak berlabel tebal yang isinya sebuah list. Tiga tag baru:</p><ul><li><code>&lt;div&gt;</code> — elemen pembungkus generik, dipakai bersama <code>class</code> supaya bisa distyling nanti (kotaknya akan benar-benar terlihat seperti kotak di modul CSS Dasar).</li><li><code>&lt;strong&gt;</code> — membuat teks tebal, dipakai untuk label \"TEKS BOX 1\".</li><li><code>&lt;ul&gt;</code>/<code>&lt;li&gt;</code> — daftar tanpa urutan (bullet), tiap item ditulis dengan <code>&lt;li&gt;</code>.</li></ul><p>Box 1 ini kita taruh di dalam SATU <code>&lt;div class=\"box-container\"&gt;</code> pembungkus. Box 2 (dan kotak lain kalau kamu mau tambah) akan dimasukkan ke dalam wadah yang SAMA di lesson berikutnya — supaya nanti di modul CSS Dasar, semua box di dalam wadah ini bisa dibuat sejajar berdampingan sekaligus, cukup dengan menata satu elemen wadahnya saja.</p>",
+      "contoh_kode": "<div class=\"box-container\">\n  <div class=\"box box-1\">\n    <p><strong>TEKS BOX 1</strong></p>\n    <p>Kita buat list :</p>\n    <ul>\n      <li>AN-NASS</li>\n      <li>AL-FALAQ</li>\n      <li>AL-IKHLAS</li>\n    </ul>\n  </div>\n</div>",
       "starter_code": {
         "html": "<h1>HALLO NAMA SAYA WISNU</h1>\n<h2>INI ADALAH WEBSITE PERTAMA SAYA</h2>",
         "css": "h1, h2 {\n  text-align: center;\n}",
         "js": ""
       },
-      "tantangan": "Di bawah judulmu, tambahkan <div class=\"box box-1\"> berisi: <p><strong>TEKS BOX 1</strong></p>, <p>Kita buat list :</p>, dan <ul> minimal 3 item (boleh pakai AN-NASS/AL-FALAQ/AL-IKHLAS atau daftar favoritmu sendiri)."
+      "tantangan": "Di bawah judulmu, tambahkan <div class=\"box-container\"> sebagai wadah bersama, lalu di DALAMNYA buat <div class=\"box box-1\"> berisi: <p><strong>TEKS BOX 1</strong></p>, <p>Kita buat list :</p>, dan <ul> minimal 3 item (boleh pakai AN-NASS/AL-FALAQ/AL-IKHLAS atau daftar favoritmu sendiri). Jangan lupa tutup .box-container di baris paling bawah — box-2 akan disisipkan ke wadah yang sama ini di lesson berikutnya, JANGAN buat wadah baru lagi."
     },
     {
       "id": "html-dasar-7",
       "judul": "Gambar & Kotak Kedua (Box 2)",
       "penjelasan": "<p>Sekarang \"TEKS BOX 2\": kotak kedua berisi gambar. Menampilkan gambar butuh SATU tag: <code>&lt;img&gt;</code> — tidak punya tag penutup, cukup satu tag dengan 2 atribut penting:</p><ul><li><code>src</code> (sumber) — alamat gambarnya, bisa link internet (<code>https://...</code>) atau file di komputer sendiri (<code>foto.jpg</code>, ditaruh di folder yang sama).</li><li><code>alt</code> (teks alternatif) — deskripsi singkat, tampil kalau gambar gagal dimuat dan dibacakan pembaca layar.</li></ul><p><strong>Kesalahan umum:</strong> lupa mengisi <code>src</code>, salah ketik nama file, atau lupa ekstensi (<code>.jpg</code>/<code>.png</code>).</p>",
-      "contoh_kode": "<div class=\"box box-2\">\n  <p><strong>TEKS BOX 2</strong></p>\n  <p>Gambar di dalam box</p>\n  <img src=\"https://via.placeholder.com/280x160\" alt=\"Contoh gambar\">\n</div>",
+      "contoh_kode": "<div class=\"box-container\">\n  <div class=\"box box-1\">\n    <!-- isi box-1 yang sudah kamu buat -->\n  </div>\n\n  <div class=\"box box-2\">\n    <p><strong>TEKS BOX 2</strong></p>\n    <p>Gambar di dalam box</p>\n    <img src=\"https://via.placeholder.com/280x160\" alt=\"Contoh gambar\">\n  </div>\n</div>",
       "starter_code": {
         "html": "",
         "css": "",
         "js": ""
       },
-      "tantangan": "Di bawah box-1, tambahkan <div class=\"box box-2\"> berisi: <p><strong>TEKS BOX 2</strong></p>, <p>Gambar di dalam box</p>, dan satu <img> (boleh pakai https://via.placeholder.com/280x160 atau fotomu sendiri, isi alt-nya)."
+      "tantangan": "PENTING: JANGAN buat <div class=\"box-container\"> baru. Cari tag penutup </div> milik .box-container yang sudah kamu buat di lesson sebelumnya (letaknya tepat setelah box-1 selesai), lalu SISIPKAN <div class=\"box box-2\"> tepat SEBELUM tag penutup itu, berisi: <p><strong>TEKS BOX 2</strong></p>, <p>Gambar di dalam box</p>, dan satu <img> (boleh pakai https://via.placeholder.com/280x160 atau fotomu sendiri, isi alt-nya). Hasilnya: box-1 dan box-2 sama-sama ada di DALAM satu .box-container yang sama."
     },
     {
       "id": "html-dasar-8",
