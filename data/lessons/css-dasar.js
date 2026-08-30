@@ -6,7 +6,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
     {
       "id": "css-dasar-1",
       "judul": "Cara Menyisipkan CSS",
-      "penjelasan": "Ada 3 cara memakai CSS: inline (atribut <code>style</code> langsung di tag), internal (tag <code>&lt;style&gt;</code> di dalam <code>&lt;head&gt;</code>), dan external (file <code>.css</code> terpisah yang dihubungkan dengan <code>&lt;link&gt;</code>). Cara external paling disarankan karena memisahkan konten dan tampilan.",
+      "penjelasan": "Sebelumnya di modul HTML Dasar kamu sudah sempat coba sedikit CSS internal untuk font, warna, ukuran, dan background. Sekarang kita perdalam dari awal secara lebih formal. Ada 3 cara memakai CSS: inline (atribut <code>style</code> langsung di tag), internal (tag <code>&lt;style&gt;</code> di dalam <code>&lt;head&gt;</code>), dan external (file <code>.css</code> terpisah yang dihubungkan dengan <code>&lt;link&gt;</code>). Cara external paling disarankan karena memisahkan konten dan tampilan.",
       "contoh_kode": "<!-- Internal CSS -->\n<style>\n  p {\n    color: blue;\n  }\n</style>\n\n<p style=\"color: red;\">Ini pakai inline CSS</p>\n<p>Ini pakai internal CSS (warna biru)</p>",
       "starter_code": {
         "html": "<p style=\"color: red;\">Ini pakai inline CSS</p>\n<p>Ini pakai internal CSS</p>",
