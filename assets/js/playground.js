@@ -1,10 +1,22 @@
 (function () {
+  // Kotak CSS/JS sudah otomatis dibungkus <style>/<script> saat preview dirender.
+  // Kalau user ikut menulis tag pembungkus itu sendiri (misal copy-paste contoh kode
+  // apa adanya), buang dulu supaya tidak jadi tag bersarang yang rusak (<style><style>...).
+  function stripWrapperTags(code, tagName) {
+    if (!code) return code;
+    var openTag = new RegExp("<" + tagName + "[^>]*>", "gi");
+    var closeTag = new RegExp("<\\/" + tagName + "\\s*>", "gi");
+    return code.replace(openTag, "").replace(closeTag, "");
+  }
+
   function buildSrcDoc(html, css, js) {
+    var cleanCss = stripWrapperTags(css, "style");
+    var cleanJs = stripWrapperTags(js, "script");
     return (
       "<!DOCTYPE html><html><head><meta charset=\"utf-8\">" +
-      "<style>" + css + "</style></head><body>" +
+      "<style>" + cleanCss + "</style></head><body>" +
       html +
-      "<script>\n" + js + "\n<" + "/script>" +
+      "<script>\n" + cleanJs + "\n<" + "/script>" +
       "</body></html>"
     );
   }
