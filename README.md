@@ -1,11 +1,11 @@
 # LearnWeb
 
-Website statis untuk belajar HTML, CSS, dan JavaScript dari nol — tanpa framework, tanpa build tool. Berisi jalur belajar 7 modul (HTML/CSS/JavaScript Dasar → HTML/CSS/JavaScript Lanjutan → Proyek Gabungan, total 80 lesson), tiap lesson dilengkapi penjelasan, contoh kode, dan live code playground.
+Website statis untuk belajar HTML dan CSS dari nol — tanpa framework, tanpa build tool. Jalur belajar saat ini sengaja disederhanakan jadi 2 modul (HTML Dasar → CSS Dasar, total 42 lesson): materi disusun per topik (Teks → CSS untuk Teks → Gambar → Tabel → topik HTML lainnya), baru di bagian akhir tiap modul ada beberapa lesson "Tugas" yang menggabungkan semuanya jadi satu praktik nyata. Modul lanjutan (JavaScript, HTML/CSS/JS Lanjutan, Proyek Gabungan) untuk sementara dinonaktifkan dari alur — file datanya masih ada di `data/lessons/`, tinggal didaftarkan lagi di `assets/js/app.js` kalau mau diaktifkan.
 
 **🔗 Demo Langsung:** https://tinyurl.com/coding-html-lesson
 (alamat asli: https://wisnu199701-glitch.github.io/learnweb/)
 
-**Project berkelanjutan:** playground di semua lesson berbagi SATU kode yang sama (tersimpan otomatis di `localStorage`, lihat `assets/js/project.js`). Mulai dari lesson pertama (kotak kode kosong), setiap "Tantangan" mengarahkan menambah bagian baru ke website yang sama, sampai di lesson terakhir jadi satu Website Portofolio Pribadi yang utuh. Tombol "🗑 Reset Total" di playground menghapus seluruh progress ini (beda dari lesson biasa yang cuma reset ke starter code lesson itu sendiri). Sandbox (`sandbox.html`) tetap terpisah, tidak ikut project ini.
+**Project berkelanjutan:** playground di semua lesson berbagi SATU kode yang sama (tersimpan otomatis di `localStorage`, lihat `assets/js/project.js`), jadi kode yang kamu tulis tetap ada meski pindah-pindah lesson. Tombol "🗑 Reset Total" di playground menghapus seluruh progress ini (beda dari lesson biasa yang cuma reset ke starter code lesson itu sendiri). Sandbox (`sandbox.html`) tetap terpisah, tidak ikut project ini.
 
 Lihat `LEARNWEB_SPEC.md` untuk spesifikasi lengkap proyek ini.
 
@@ -29,7 +29,7 @@ Lalu buka `http://localhost:8000` di browser.
 
 ```
 /
-├── index.html          # Landing page + roadmap 7 modul
+├── index.html          # Landing page + roadmap modul aktif
 ├── app.html             # Shell SPA untuk render lesson (routing via hash)
 ├── sandbox.html          # Playground bebas
 ├── assets/css/style.css  # Semua styling + tema dark/light

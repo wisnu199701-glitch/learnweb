@@ -1,12 +1,11 @@
 (function () {
+  // Modul lanjutan (JS Dasar, HTML/CSS/JS Lanjutan, Proyek Gabungan) sengaja
+  // dinonaktifkan sementara -- fokus jalur belajar sekarang cuma HTML+CSS Dasar.
+  // File datanya masih ada di data/lessons/, tinggal tambahkan baris ke array
+  // ini lagi kalau mau diaktifkan ulang.
   var MODULES = [
     { id: "html-dasar", judul: "HTML Dasar", order: 1 },
-    { id: "css-dasar", judul: "CSS Dasar", order: 2 },
-    { id: "javascript-dasar", judul: "JavaScript Dasar", order: 3 },
-    { id: "html-lanjutan", judul: "HTML Lanjutan", order: 4 },
-    { id: "css-lanjutan", judul: "CSS Lanjutan", order: 5 },
-    { id: "javascript-lanjutan", judul: "JavaScript Lanjutan", order: 6 },
-    { id: "proyek-gabungan", judul: "Proyek Gabungan", order: 7 }
+    { id: "css-dasar", judul: "CSS Dasar", order: 2 }
   ];
 
   // Data lesson dimuat lewat <script> (assets/js/../data/lessons/*.js -> window.LEARNWEB_LESSONS)
