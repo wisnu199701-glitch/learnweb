@@ -101,6 +101,18 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
     },
     {
       "id": "css-dasar-9",
+      "judul": "Tata Letak & Perataan (Alignment)",
+      "penjelasan": "Perataan konten diatur lewat <code>text-align</code> pada elemen INDUK (pembungkus), nilainya <code>left</code> (kiri, default), <code>center</code> (tengah), <code>right</code> (kanan), atau <code>justify</code> (rata kiri-kanan sekaligus, seperti kolom koran). Yang sering bikin bingung: <code>text-align: center</code> juga bisa menengahkan GAMBAR, karena <code>&lt;img&gt;</code> secara default berperilaku seperti teks (inline) — jadi ikut mengikuti perataan elemen induknya. Cara lain menengahkan gambar TANPA bergantung pada induk: ubah gambar jadi <code>display: block;</code> lalu beri <code>margin: 0 auto;</code> (margin atas-bawah 0, kiri-kanan otomatis membagi rata sisa ruang).",
+      "contoh_kode": "<div class=\"wadah\">\n  <p>Teks ini rata tengah</p>\n  <img src=\"https://via.placeholder.com/100\" alt=\"Gambar ikut rata tengah karena induknya text-align: center\">\n</div>\n\n<img src=\"https://via.placeholder.com/100\" alt=\"Gambar mandiri, ditengahkan sendiri\" class=\"gambar-mandiri\">",
+      "starter_code": {
+        "html": "<div class=\"wadah\">\n  <p>Teks ini rata tengah</p>\n  <img src=\"https://via.placeholder.com/100\" alt=\"Gambar ikut rata tengah\">\n</div>\n\n<img src=\"https://via.placeholder.com/100\" alt=\"Gambar mandiri\" class=\"gambar-mandiri\">",
+        "css": ".wadah {\n  text-align: center;\n}\n\n.gambar-mandiri {\n  display: block;\n  margin: 0 auto;\n}",
+        "js": ""
+      },
+      "tantangan": "Bungkus foto profil di portofoliomu dengan sebuah <div> baru, beri class lalu text-align: center supaya foto ikut rata tengah. Setelah itu coba cara kedua: hapus wadahnya, dan pakai display: block; margin: 0 auto; langsung pada tag <img>-nya untuk hasil yang sama tanpa perlu pembungkus."
+    },
+    {
+      "id": "css-dasar-10",
       "judul": "Border Radius & Box Shadow",
       "penjelasan": "<code>border-radius</code> membuat sudut elemen melengkung (nilai besar seperti 50% membuat lingkaran penuh pada elemen persegi). <code>box-shadow</code> menambahkan efek bayangan di belakang elemen, formatnya <code>box-shadow: offset-x offset-y blur warna;</code>.",
       "contoh_kode": "<div class=\"kartu\">Kartu dengan Bayangan</div>\n<div class=\"lingkaran\"></div>",
@@ -112,7 +124,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
       "tantangan": "Buat foto profil di portofoliomu jadi bulat sempurna (border-radius: 50%), lalu tambahkan box-shadow pada tiap .section supaya terlihat lebih menonjol."
     },
     {
-      "id": "css-dasar-10",
+      "id": "css-dasar-11",
       "judul": "Display Property",
       "penjelasan": "Properti <code>display</code> menentukan bagaimana elemen ditampilkan: <code>block</code> (selalu baris baru, seperti div), <code>inline</code> (mengikuti alur teks, tidak bisa diatur width/height), <code>inline-block</code> (mengikuti alur teks tapi bisa diatur width/height), dan <code>none</code> (elemen disembunyikan total, tidak memakan ruang).",
       "contoh_kode": "<span class=\"tag inline\">Inline</span>\n<span class=\"tag inline-block\">Inline-Block</span>\n<div class=\"tag block\">Block</div>\n<p class=\"sembunyi\">Ini disembunyikan (display: none)</p>",
@@ -124,7 +136,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
       "tantangan": "Ubah tampilan daftar Keahlian di portofoliomu jadi \"chip/badge\": beri tiap <li> display: inline-block dengan background warna dan border-radius."
     },
     {
-      "id": "css-dasar-11",
+      "id": "css-dasar-12",
       "judul": "Positioning",
       "penjelasan": "Properti <code>position</code> mengatur cara elemen diposisikan: <code>static</code> (default, mengikuti alur normal), <code>relative</code> (bergeser dari posisi normalnya sendiri), <code>absolute</code> (keluar dari alur, mengikuti induk terdekat yang punya position selain static), <code>fixed</code> (menempel di layar, tidak ikut scroll), dan <code>sticky</code> (menempel setelah scroll melewati titik tertentu).",
       "contoh_kode": "<div class=\"induk\">\n  <div class=\"badge\">Baru!</div>\n  <p>Produk Spesial</p>\n</div>",
@@ -136,7 +148,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
       "tantangan": "Buat <header> portofoliomu position: sticky di bagian atas supaya tetap terlihat saat halaman di-scroll ke bawah."
     },
     {
-      "id": "css-dasar-12",
+      "id": "css-dasar-13",
       "judul": "CSS Grid Dasar",
       "penjelasan": "Grid cocok untuk layout 2 dimensi (baris dan kolom sekaligus). Set <code>display: grid</code> pada induk, lalu <code>grid-template-columns</code> menentukan jumlah dan lebar kolom (misalnya <code>repeat(3, 1fr)</code> untuk 3 kolom sama lebar), dan <code>gap</code> mengatur jarak antar sel.",
       "contoh_kode": "<div class=\"grid\">\n  <div class=\"sel\">1</div>\n  <div class=\"sel\">2</div>\n  <div class=\"sel\">3</div>\n  <div class=\"sel\">4</div>\n</div>",
@@ -148,7 +160,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
       "tantangan": "Ubah layout daftar Keahlian di portofoliomu jadi grid 2-3 kolom memakai display: grid dan grid-template-columns."
     },
     {
-      "id": "css-dasar-13",
+      "id": "css-dasar-14",
       "judul": "Pseudo-class & Pseudo-element",
       "penjelasan": "Pseudo-class menargetkan elemen berdasarkan keadaan tertentu, contoh <code>:hover</code> (saat kursor di atasnya) dan <code>:first-child</code> (elemen pertama dari induknya). Pseudo-element menargetkan bagian tertentu dari elemen, contoh <code>::before</code> dan <code>::after</code> untuk menyisipkan konten tambahan lewat CSS.",
       "contoh_kode": "<button class=\"tombol\">Hover Aku</button>\n<ul>\n  <li>Item Pertama</li>\n  <li>Item Kedua</li>\n</ul>",
@@ -160,7 +172,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
       "tantangan": "Tambahkan efek :hover pada link kontak/sosial media di portofoliomu, dan ::before berupa ikon kecil (misal \"✓ \") di tiap item daftar Keahlian."
     },
     {
-      "id": "css-dasar-14",
+      "id": "css-dasar-15",
       "judul": "Transition & Animation Dasar",
       "penjelasan": "<code>transition</code> membuat perubahan properti (misal warna atau ukuran) berlangsung mulus dalam durasi tertentu, biasanya dipasang bersama <code>:hover</code>. Untuk animasi yang lebih kompleks dan berulang, gunakan <code>@keyframes</code> lalu panggil lewat properti <code>animation</code>.",
       "contoh_kode": "<div class=\"box-transisi\">Hover Aku</div>\n<div class=\"box-animasi\"></div>",
@@ -172,7 +184,7 @@ window.LEARNWEB_LESSONS["css-dasar"] = {
       "tantangan": "Beri transition halus pada tombol kirim di form Kontak portofoliomu (efek :hover), dan tambahkan animasi fade-in ringan pada header saat halaman pertama kali dimuat."
     },
     {
-      "id": "css-dasar-15",
+      "id": "css-dasar-16",
       "judul": "CSS Variables (Custom Properties)",
       "penjelasan": "CSS Variables menyimpan nilai yang bisa dipakai ulang di banyak tempat, didefinisikan dengan awalan dua tanda hubung di dalam <code>:root</code> (misalnya <code>--warna-utama</code>), dan dipanggil dengan <code>var(--warna-utama)</code>. Berguna supaya ganti satu warna tema cukup di satu tempat saja.",
       "contoh_kode": ":root {\n  --warna-utama: #4f46e5;\n  --radius: 8px;\n}\n\n.tombol {\n  background: var(--warna-utama);\n  border-radius: var(--radius);\n}\n\n.judul {\n  color: var(--warna-utama);\n}",
