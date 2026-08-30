@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Portofolio pribadi Rian Pratama, calon web developer yang sedang belajar HTML, CSS, dan JavaScript.">
+  <title>Portofolio - Rian Pratama</title>
+  <style>
+    :root {
+      --warna-utama: #4f46e5;
+      --warna-aksen: #f59e0b;
+      --bg: #f7f8fa;
+      --bg-elevated: #ffffff;
+      --bg-muted: #eef0f3;
+      --text: #1c1f26;
+      --text-muted: #5b6270;
+      --border: #dfe3e8;
+      --radius: 12px;
+      --shadow: 0 2px 10px rgba(16, 20, 30, 0.08);
+    }
+
+    [data-theme="dark"] {
+      --bg: #14161c;
+      --bg-elevated: #1c1f28;
+      --bg-muted: #23262f;
+      --text: #e7e9ee;
+      --text-muted: #9aa1b1;
+      --border: #2e3240;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    a { color: var(--warna-utama); }
+    h1, h2 { color: var(--warna-utama); }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0; }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: linear-gradient(135deg, var(--warna-utama), var(--warna-aksen));
+      color: #fff;
+      padding: 1.5rem 1.5rem 1rem;
+      animation: fadeIn 0.6s ease;
+    }
+    header h1, header .tagline { color: #fff; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .profil-wrap {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .foto-profil {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      object-fit: cover;
+    }
+    .tagline { margin: 0.25rem 0 0; opacity: 0.9; }
+    header nav {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    header nav a:hover { opacity: 1; text-decoration: underline; }
+    #toggle-tema {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.6);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.4rem 0.8rem;
+      cursor: pointer;
+    }
+    header { position: sticky; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+
+    .section {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .section + .section { margin-top: 0; }
+    footer a { color: var(--warna-utama); }
+
+    #bio-panjang[hidden] { display: none; }
+    .btn {
+      background: var(--warna-utama);
+      color: #fff;
+      border: none;
+      padding: 0.55rem 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: transform 0.15s, background 0.2s;
+    }
+    .btn:hover { background: #4338ca; transform: translateY(-1px); }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.6rem;
+      list-style: none;
+      padding: 0;
+    }
+    .skill-grid li {
+      background: var(--bg-muted);
+      border-radius: 999px;
+      padding: 0.5rem 0.9rem;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .skill-grid li::before { content: "✓"; color: var(--warna-utama); font-weight: bold; }
+    .badge-mahir { background: #dcfce7 !important; color: #15803d; }
+    .badge-menengah { background: #fef9c3 !important; color: #854d0e; }
+    .badge-pemula { background: var(--bg-muted); color: var(--text-muted); }
+
+    .proyek-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .proyek-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .proyek-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+    .proyek-card h3 { margin: 0 0 0.4rem; font-size: 1rem; }
+    .proyek-card p { margin: 0; font-size: 0.85rem; color: var(--text-muted); }
+    .proyek-preview img { max-width: 100%; border-radius: 10px; margin-bottom: 1rem; }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+    th, td { border: 1px solid var(--border); padding: 0.6rem; text-align: left; font-size: 0.9rem; }
+    thead th { background: var(--bg-muted); }
+    tfoot td { font-style: italic; color: var(--text-muted); }
+
+    form fieldset { border: 1px solid var(--border); border-radius: 10px; padding: 1rem; }
+    form label { display: block; margin-top: 0.75rem; font-size: 0.88rem; font-weight: 600; }
+    form input[type="text"], form input[type="email"], form input[type="date"], form select, form textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-top: 0.3rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: inherit;
+    }
+    form input[type="color"] { margin-top: 0.3rem; }
+    form meter { width: 100%; margin-top: 0.5rem; }
+    #form-status { font-size: 0.9rem; margin-top: 0.75rem; }
+    #form-status.error { color: #dc2626; }
+    #form-status.success { color: #16a34a; }
+
+    #checklist-list { list-style: none; padding: 0; }
+    #checklist-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    #checklist-list li.done { text-decoration: line-through; color: var(--text-muted); }
+    #checklist-list button { margin-left: auto; background: none; border: none; cursor: pointer; color: #dc2626; }
+
+    details { margin-bottom: 0.75rem; }
+    details summary { cursor: pointer; font-weight: 600; }
+
+    #quote-text { font-style: italic; }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .profil-wrap { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Section: Header -->
+  <header>
+    <button id="toggle-tema" aria-label="Ganti tema terang/gelap">🌙</button>
+    <div class="profil-wrap">
+      <img class="foto-profil" src="https://via.placeholder.com/120" alt="Foto profil Rian Pratama">
+      <div>
+        <h1>Rian Pratama</h1>
+        <p class="tagline" id="tagline">Calon Web Developer</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#tentang">Tentang</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#faq">FAQ</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section: Tentang Saya -->
+    <div class="section" id="tentang">
+      <h2>Tentang Saya</h2>
+      <p id="sapaan"></p>
+      <p><strong>Halo!</strong> Saya Rian, <em>calon web developer</em> yang sedang belajar HTML, CSS, dan JavaScript dari nol lewat LearnWeb.</p>
+      <p id="bio-panjang" hidden>Saya mulai belajar coding karena penasaran bagaimana halaman web bekerja. Sekarang saya sedang membangun proyek-proyek kecil untuk mengasah kemampuan, dan portofolio ini sendiri adalah hasil dari 69 lesson yang saya selesaikan satu per satu.</p>
+      <button class="btn" id="toggle-bio">Baca Selengkapnya</button>
+      <blockquote>"Belajar sedikit tiap hari lebih baik daripada banyak sekali-sekali."</blockquote>
+    </div>
+
+    <!-- Section: Keahlian -->
+    <div class="section" id="keahlian">
+      <h2>Keahlian</h2>
+      <p id="skill-count"></p>
+      <ul class="skill-grid" id="skill-list"></ul>
+    </div>
+
+    <!-- Section: Proyek Saya -->
+    <div class="section" id="proyek">
+      <h2>Proyek Saya</h2>
+      <div class="proyek-preview" id="proyek-preview" hidden>
+        <img id="proyek-preview-img" src="" alt="Preview proyek">
+      </div>
+      <p id="proyek-status">Memuat proyek...</p>
+      <div class="proyek-grid" id="proyek-grid" hidden></div>
+    </div>
+
+    <!-- Section: Riwayat Pendidikan -->
+    <div class="section" id="pendidikan">
+      <h2>Riwayat Pendidikan</h2>
+      <table>
+        <thead>
+          <tr><th>Institusi</th><th>Tahun</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>SMA Negeri 1</td><td>2019 - 2022</td></tr>
+          <tr><td>Belajar Mandiri (LearnWeb)</td><td>2026 - Sekarang</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Total 2 riwayat pendidikan</td></tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- Section: FAQ -->
+    <div class="section" id="faq">
+      <h2>Pertanyaan Umum</h2>
+      <details>
+        <summary>Apakah kamu sedang mencari pekerjaan?</summary>
+        <p>Ya, saya terbuka untuk kesempatan magang atau posisi junior web developer.</p>
+      </details>
+      <details>
+        <summary>Bahasa pemrograman apa yang kamu kuasai?</summary>
+        <p>Saat ini fokus saya di HTML, CSS, dan JavaScript, dan terus belajar hal baru tiap minggu.</p>
+      </details>
+    </div>
+
+    <!-- Section: Progress Belajar (checklist) -->
+    <div class="section" id="progress-belajar">
+      <h2>Progress Belajar</h2>
+      <div style="display:flex; gap:0.5rem;">
+        <input type="text" id="checklist-input" placeholder="Tambah target belajar...">
+        <button class="btn" id="checklist-add" type="button">Tambah</button>
+      </div>
+      <ul id="checklist-list"></ul>
+    </div>
+
+    <!-- Section: Kontak -->
+    <div class="section" id="kontak">
+      <h2>Hubungi Saya</h2>
+      <form id="form-kontak">
+        <fieldset>
+          <legend>Form Kontak</legend>
+
+          <label for="nama">Nama</label>
+          <input type="text" id="nama" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+
+          <label for="topik">Topik Pesan</label>
+          <select id="topik">
+            <option>Kerja Sama</option>
+            <option>Pertanyaan</option>
+            <option>Lainnya</option>
+          </select>
+
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" rows="3" list="saran-topik"></textarea>
+          <datalist id="saran-topik">
+            <option value="Tertarik kolaborasi proyek">
+            <option value="Ada lowongan magang?">
+          </datalist>
+
+          <label for="tanggal-interview">Tanggal Tersedia Interview</label>
+          <input type="date" id="tanggal-interview">
+
+          <label for="warna-tema">Warna Tema Favoritmu</label>
+          <input type="color" id="warna-tema" value="#4f46e5">
+
+          <label for="kelengkapan">Tingkat Kelengkapan Profil</label>
+          <meter id="kelengkapan" min="0" max="100" value="80"></meter>
+
+          <label style="display:flex; align-items:center; gap:0.5rem; font-weight:normal;">
+            <input type="checkbox" id="setuju" required style="width:auto;">
+            Saya setuju data ini digunakan untuk keperluan balasan pesan.
+          </label>
+
+          <button class="btn" type="submit" style="margin-top:1rem;">Kirim</button>
+        </fieldset>
+      </form>
+      <p id="form-status"></p>
+    </div>
+
+    <!-- Section: Quote of the Day -->
+    <div class="section" id="quote">
+      <h2>Quote of the Day</h2>
+      <p id="quote-text">Memuat kutipan...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="tahun"></span> Rian Pratama. Dibuat sambil belajar di LearnWeb.</p>
+    <p id="visit-counter"></p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    /* ===== Data Skill (Object + Array) ===== */
+    const skills = [
+      { nama: "HTML", level: "mahir" },
+      { nama: "CSS", level: "mahir" },
+      { nama: "JavaScript", level: "menengah" },
+      { nama: "Git & GitHub", level: "menengah" },
+      { nama: "Figma", level: "pemula" },
+      { nama: "Responsive Design", level: "menengah" }
+    ];
+
+    function badgeClass(level) {
+      switch (level) {
+        case "mahir": return "badge-mahir";
+        case "menengah": return "badge-menengah";
+        default: return "badge-pemula";
+      }
+    }
+
+    function renderSkills() {
+      const list = document.querySelector("#skill-list");
+      list.innerHTML = skills
+        .map(({ nama, level }) => `<li class="${badgeClass(level)}">${nama}</li>`)
+        .join("");
+      document.querySelector("#skill-count").textContent = `Saya punya ${skills.length} skill utama.`;
+    }
+    renderSkills();
+
+    /* ===== Sapaan otomatis (kondisi + fungsi + DOM) ===== */
+    function getGreeting() {
+      const jam = new Date().getHours();
+      if (jam < 11) return "Selamat Pagi! Terima kasih sudah mampir ke portofolio saya.";
+      if (jam < 15) return "Selamat Siang! Terima kasih sudah mampir ke portofolio saya.";
+      if (jam < 19) return "Selamat Sore! Terima kasih sudah mampir ke portofolio saya.";
+      return "Selamat Malam! Terima kasih sudah mampir ke portofolio saya.";
+    }
+    document.querySelector("#sapaan").textContent = getGreeting();
+
+    /* ===== Toggle bio (event handling) ===== */
+    document.querySelector("#toggle-bio").addEventListener("click", function () {
+      const bio = document.querySelector("#bio-panjang");
+      const sedangTampil = !bio.hidden;
+      bio.hidden = sedangTampil;
+      this.textContent = sedangTampil ? "Baca Selengkapnya" : "Tutup";
+    });
+
+    /* ===== Tahun otomatis di footer (Date + DOM) ===== */
+    document.querySelector("#tahun").textContent = new Date().getFullYear();
+
+    /* ===== Notifikasi selamat datang (setTimeout) ===== */
+    setTimeout(function () {
+      const toast = document.createElement("div");
+      toast.textContent = "Terima kasih sudah berkunjung!";
+      toast.style.cssText =
+        "position:fixed;bottom:20px;right:20px;background:#1c1f26;color:#fff;padding:0.75rem 1.25rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.25);z-index:50;";
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 4000);
+    }, 2000);
+
+    /* ===== Class Project (OOP) + Promise/async-await (simulasi loading) ===== */
+    class Project {
+      constructor(judul, deskripsi, gambar) {
+        this.judul = judul;
+        this.deskripsi = deskripsi;
+        this.gambar = gambar;
+      }
+    }
+
+    const daftarProyek = [
+      new Project("LearnWeb Clone", "Website belajar HTML/CSS/JS sederhana.", "https://via.placeholder.com/300?text=Proyek+1"),
+      new Project("To-Do List App", "Aplikasi daftar tugas dengan localStorage.", "https://via.placeholder.com/300?text=Proyek+2"),
+      new Project("Galeri Foto Interaktif", "Galeri gambar dengan preview klik.", "https://via.placeholder.com/300?text=Proyek+3")
+    ];
+
+    function muatProyek() {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(daftarProyek), 800);
+      });
+    }
+
+    async function tampilkanProyek() {
+      const status = document.querySelector("#proyek-status");
+      const grid = document.querySelector("#proyek-grid");
+      try {
+        const proyek = await muatProyek();
+        status.hidden = true;
+        grid.hidden = false;
+        grid.innerHTML = proyek
+          .map(
+            (p, i) => `
+            <div class="proyek-card" data-index="${i}">
+              <h3>${p.judul}</h3>
+              <p>${p.deskripsi}</p>
+            </div>`
+          )
+          .join("");
+
+        grid.querySelectorAll(".proyek-card").forEach((card) => {
+          card.addEventListener("click", () => {
+            const p = proyek[Number(card.dataset.index)];
+            document.querySelector("#proyek-preview-img").src = p.gambar;
+            document.querySelector("#proyek-preview-img").alt = "Preview " + p.judul;
+            document.querySelector("#proyek-preview").hidden = false;
+          });
+        });
+
+        const totalProyek = proyek.reduce((total) => total + 1, 0);
+        status.hidden = false;
+        status.textContent = `Total ${totalProyek} proyek ditampilkan.`;
+      } catch (err) {
+        status.textContent = "Gagal memuat proyek.";
+      }
+    }
+    tampilkanProyek();
+
+    /* ===== Validasi form (try/catch) + simpan draft (JSON + localStorage) ===== */
+    const DRAFT_KEY = "portofolio_draft_kontak";
+
+    function muatDraft() {
+      try {
+        const raw = localStorage.getItem(DRAFT_KEY);
+        if (!raw) return;
+        const draft = JSON.parse(raw);
+        if (draft.nama) document.querySelector("#nama").value = draft.nama;
+        if (draft.email) document.querySelector("#email").value = draft.email;
+        if (draft.pesan) document.querySelector("#pesan").value = draft.pesan;
+      } catch (e) {}
+    }
+    muatDraft();
+
+    ["nama", "email", "pesan"].forEach((id) => {
+      document.querySelector("#" + id).addEventListener("input", function () {
+        try {
+          const draft = {
+            nama: document.querySelector("#nama").value,
+            email: document.querySelector("#email").value,
+            pesan: document.querySelector("#pesan").value
+          };
+          localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+        } catch (e) {}
+      });
+    });
+
+    document.querySelector("#form-kontak").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const status = document.querySelector("#form-status");
+      try {
+        const nama = document.querySelector("#nama").value.trim();
+        if (nama === "") {
+          throw new Error("Nama tidak boleh kosong.");
+        }
+        status.className = "success";
+        status.textContent = "Pesan berhasil dikirim! Terima kasih, " + nama + ".";
+        try {
+          localStorage.removeItem(DRAFT_KEY);
+        } catch (e) {}
+        this.reset();
+      } catch (err) {
+        status.className = "error";
+        status.textContent = "Gagal mengirim: " + err.message;
+      }
+    });
+
+    /* ===== Checklist Progress Belajar (array + DOM) ===== */
+    const checklistItems = [];
+
+    function renderChecklist() {
+      const list = document.querySelector("#checklist-list");
+      list.innerHTML = checklistItems
+        .map(
+          (item, i) => `
+          <li class="${item.done ? "done" : ""}" data-index="${i}">
+            <span data-toggle>${item.teks}</span>
+            <button type="button" data-hapus aria-label="Hapus item">✕</button>
+          </li>`
+        )
+        .join("");
+
+      list.querySelectorAll("[data-toggle]").forEach((el, i) => {
+        el.addEventListener("click", () => {
+          checklistItems[i].done = !checklistItems[i].done;
+          renderChecklist();
+        });
+      });
+      list.querySelectorAll("[data-hapus]").forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          checklistItems.splice(i, 1);
+          renderChecklist();
+        });
+      });
+    }
+
+    document.querySelector("#checklist-add").addEventListener("click", () => {
+      const input = document.querySelector("#checklist-input");
+      if (input.value.trim() === "") return;
+      checklistItems.push({ teks: input.value.trim(), done: false });
+      input.value = "";
+      renderChecklist();
+    });
+
+    ["Belajar HTML Dasar", "Belajar CSS Dasar", "Belajar JavaScript Dasar"].forEach((teks) =>
+      checklistItems.push({ teks, done: true })
+    );
+    renderChecklist();
+
+    /* ===== Sosial media dengan optional chaining & nullish coalescing ===== */
+    const sosialMedia = {
+      github: "https://github.com/",
+      instagram: undefined
+    };
+    console.log("GitHub:", sosialMedia.github ?? "Belum diisi");
+    console.log("Instagram:", sosialMedia?.instagram ?? "Belum diisi");
+
+    /* ===== Penghitung kunjungan (closure + localStorage) ===== */
+    function buatCounterKunjungan() {
+      let jumlah = 0;
+      try {
+        jumlah = Number(localStorage.getItem("portofolio_kunjungan")) || 0;
+      } catch (e) {}
+      return function () {
+        jumlah++;
+        try {
+          localStorage.setItem("portofolio_kunjungan", String(jumlah));
+        } catch (e) {}
+        return jumlah;
+      };
+    }
+    const catatKunjungan = buatCounterKunjungan();
+    document.querySelector("#visit-counter").textContent = `Halaman ini sudah dikunjungi ${catatKunjungan()} kali.`;
+
+    /* ===== Dark mode toggle (spread/rest + CSS variables) ===== */
+    const defaultTema = { mode: "terang" };
+
+    function terapkanTema(mode) {
+      document.documentElement.setAttribute("data-theme", mode);
+      document.querySelector("#toggle-tema").textContent = mode === "gelap" ? "☀️" : "🌙";
+    }
+
+    function muatTema() {
+      let tersimpan = {};
+      try {
+        tersimpan = JSON.parse(localStorage.getItem("portofolio_tema")) || {};
+      } catch (e) {}
+      return { ...defaultTema, ...tersimpan };
+    }
+
+    let temaSaatIni = muatTema();
+    terapkanTema(temaSaatIni.mode);
+
+    document.querySelector("#toggle-tema").addEventListener("click", function () {
+      temaSaatIni = { ...temaSaatIni, mode: temaSaatIni.mode === "gelap" ? "terang" : "gelap" };
+      terapkanTema(temaSaatIni.mode);
+      try {
+        localStorage.setItem("portofolio_tema", JSON.stringify(temaSaatIni));
+      } catch (e) {}
+    });
+
+    /* ===== Fetch API: Quote of the Day ===== */
+    async function muatQuote() {
+      const quoteEl = document.querySelector("#quote-text");
+      try {
+        const response = await fetch("https://api.quotable.io/random");
+        if (!response.ok) throw new Error("Gagal mengambil kutipan");
+        const data = await response.json();
+        quoteEl.textContent = `"${data.content}" — ${data.author}`;
+      } catch (err) {
+        quoteEl.textContent = '"Belajar sedikit tiap hari lebih baik daripada banyak sekali-sekali." (kutipan cadangan, butuh koneksi internet untuk kutipan acak)';
+      }
+    }
+    muatQuote();
+  </script>
+</body>
+</html>
