@@ -78,7 +78,7 @@ window.LEARNWEB_LESSONS["html-dasar"] = {
     {
       "id": "html-dasar-7",
       "judul": "Menambahkan Background ke Teks (CSS)",
-      "penjelasan": "<code>background-color</code> mengatur warna LATAR di belakang elemen — beda dengan <code>color</code> yang mengubah warna teksnya. Properti ini bisa dipasang ke elemen apa saja, termasuk <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, bahkan <code>&lt;body&gt;</code> untuk mengubah warna latar seluruh halaman. Hati-hati memilih kombinasi warna teks dan background supaya tetap mudah dibaca (kontras cukup tinggi).",
+      "penjelasan": "<code>background-color</code> mengatur warna LATAR di belakang elemen — beda dengan <code>color</code> yang mengubah warna teksnya. Properti ini bisa dipasang ke elemen apa saja, termasuk <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, bahkan <code>&lt;body&gt;</code> untuk mengubah warna latar seluruh halaman. Hati-hati memilih kombinasi warna teks dan background supaya tetap mudah dibaca (kontras cukup tinggi). <strong>Satu properti tambahan yang berguna di sini:</strong> <code>padding</code> menambah jarak/ruang KOSONG di dalam kotak elemen, antara tepi background dan tulisannya. Tanpa padding, background akan menempel mepet ke teks (terlihat sempit); dengan <code>padding: 12px;</code> misalnya, ada jarak 12 piksel di sekeliling teks sebelum mentok ke tepi background — jadi terlihat lebih lega dan rapi.",
       "contoh_kode": "<style>\n  h1 {\n    background-color: #4f46e5;\n    color: white;\n    padding: 12px;\n  }\n</style>\n\n<h1>Judul dengan Background</h1>",
       "starter_code": {
         "html": "<h1>Judulku</h1>",
